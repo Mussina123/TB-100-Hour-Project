@@ -12,12 +12,12 @@ const router = express.Router()
 
 router.get('/', getDiarys)
 
-// router.get('/:id', getDiary)
+router.get('/:id', getDiary)
 
-// router.get('/', createDiary)
+router.post('/', createDiary)
 
-// router.get('/:id', updateDiary)
+router.put('/:id', updateDiary)
 
-// router.get('/:id', deleteDiary)
+router.delete('/:id', deleteDiary)
 
 module.exports = router 
