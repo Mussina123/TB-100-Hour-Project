@@ -2,11 +2,14 @@ const express = require('express')
 const FoodDiary = require('../models/diaryModel')
 const mongoose = require('mongoose')
 
+
+// Get all Food Diary Logs 
 const getDiarys = async(req, res) => {
     const diary = await (FoodDiary.find({}).sort({createdAt: -1}))
     res.status(200).json(diary)
 }
 
+// Get single Food Diary Log 
 const getDiary = async (req, res) => {
     const {id} = req.params
 
@@ -23,7 +26,7 @@ const getDiary = async (req, res) => {
     res.status(200).json(diary)
 }
 
-// Post Request // 
+// Create new Food Log, Post Request // 
 const createDiary = async (req, res) => {
     const {item, calories, serving} = req.body
 
@@ -69,6 +72,8 @@ const deleteDiary = async (req, res) => {
     res.status(200).json(diary)
 }
 
+
+// Updating single Food Log // 
 const updateDiary = async (req, res) => {   
     const {id} = req.params
 
