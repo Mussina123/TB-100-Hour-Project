@@ -10,12 +10,12 @@ const Home = () => {
     useEffect(() => {
         const fetchDiary = async () => {
             const response = await fetch('http://localhost:5000/api/diary') 
-            const json = await response.json()
+            const data = await response.json()
 
 
             if(response.ok) {
-                setDiary(json) // gives back an array of json data 
-                console.log(json)
+                setDiary(data) // gives back an array of json data 
+                console.log(data)
             }
 
         }
@@ -24,13 +24,16 @@ const Home = () => {
     }, [])
 
     return(
-        <div className="home">
-            <div>
+        <div className="home flex flex-row justify-center gap-10">
+            <div className="flex ">
                 {diary && diary.map((diary) => (
                     <DiaryDetails key={diary._id} diary={diary}/>
                 ))}
             </div>
+            <section className="">
             <DiaryForm />
+            </section>
+     
         </div>
     )
 }

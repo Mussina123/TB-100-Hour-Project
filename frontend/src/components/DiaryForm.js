@@ -35,7 +35,7 @@ const DiaryForm = () => {
 
     return (
         <form className="flex flex-col ml-6 mt-10 max-w-md w-52"   onSubmit={handleSubmit}>
-        <h3 className="text-2xl font-semibold">Add Food To Diary</h3>
+        <h3 className="text-2xl font-bold">Add Food To Diary</h3>
 
         <label className="mt-2">Item:</label> 
         <input 
