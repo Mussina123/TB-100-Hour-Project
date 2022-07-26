@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 
 import DiaryDetails from "../components/DiaryDetails"
+import DiaryForm from "../components/DiaryForm"
 
 const Home = () => {
 
@@ -29,6 +30,7 @@ const Home = () => {
                     <DiaryDetails key={diary._id} diary={diary}/>
                 ))}
             </div>
+            <DiaryForm />
         </div>
     )
 }
