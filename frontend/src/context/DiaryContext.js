@@ -1,7 +1,4 @@
-const DiaryContext = () => {
-    return (
-        <div></div>
-    )
-}
+import { createContext } from "react"
 
-export default DiaryContext
+export const DiaryContext = createContext()
+
