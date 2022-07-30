@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
+import { useDiaryContext } from "../hooks/useDiaryContext"
+
 
 import DiaryDetails from "../components/DiaryDetails"
 import DiaryForm from "../components/DiaryForm"
 
-const Home = () => {
 
-    const [diary, setDiary] = useState([])
+const Home = () => {
+    const {diary, dispatch} = useDiaryContext()
 
     useEffect(() => {
         const fetchDiary = async () => {
@@ -14,8 +16,7 @@ const Home = () => {
 
 
             if(response.ok) {
-                setDiary(data) // gives back an array of json data 
-                console.log(data)
+                dispatch({type: 'SET_DIARY', payload: data})
             }
 
         }
