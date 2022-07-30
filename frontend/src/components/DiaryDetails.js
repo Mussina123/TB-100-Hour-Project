@@ -1,5 +1,7 @@
 import { useDiaryContext } from "../hooks/useDiaryContext"
 
+import formatDistanceToNow from 'date-fns/formatDistanceToNow'
+
 const DiaryDetails = ({diary}) => {
 
     const {dispatch} = useDiaryContext()
@@ -21,8 +23,8 @@ const DiaryDetails = ({diary}) => {
             <h1 className="text-3xl font-semibold"  key={diary._id}> {diary.item}</h1>
             <h3 className="italic"> Calories: {diary.calories}</h3>
             <h3 className="text-slate-600"> Serving: {diary.serving}</h3>
-            <h3 className="text-slate-600"> Date: {diary.createdAt}</h3>
-            <span onClick={handleClick}>Delete</span>
+            <h3 className="text-slate-600"> {formatDistanceToNow(new Date(diary.createdAt), { addSuffix: true })}</h3>
+            <span className="material-symbols-outlined cursor cursor-pointer" onClick={handleClick}>Delete</span>
     </div>
     )
 }
