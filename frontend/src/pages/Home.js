@@ -25,13 +25,13 @@ const Home = () => {
     }, [dispatch])
 
     return(
-        <div className="home flex justify-center gap-10 ">
-            <div className="grid grid-rows-2 grid-flow-col gap-4">
+        <div className="home flex flex-col md:flex-row justify-center gap-10 ">
+            <div className="md:grid md:grid-rows-2 grid-flow-col gap-4 auto-rows-max">
                 {diary && diary.map((diary) => (
                     <DiaryDetails key={diary._id} diary={diary}/>
                 ))}
             </div>
-            <section className="">
+            <section className="m-auto md:m-0">
             <DiaryForm />
             </section>
      

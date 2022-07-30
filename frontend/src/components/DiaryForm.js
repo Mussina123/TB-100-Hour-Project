@@ -32,7 +32,7 @@ const DiaryForm = () => {
             setItem('')
             setCalories('')
             setServing('')
-            console.log("New Workout Added", json)
+            console.log("New Food Added", json)
             dispatch({type: 'CREATE_DIARY', payload: json})
         }
     }
