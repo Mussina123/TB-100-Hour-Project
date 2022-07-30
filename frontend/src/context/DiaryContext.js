@@ -13,6 +13,10 @@ export const diaryReducer = (state, action) => {
             return {
                 diary: [action.payload, ...state.diary]
             }
+        case 'DELETE_DIARY':
+            return {
+                diary: state.diary.filter((d) => d._id !== action.payload._id )
+            }
         default: 
             return state
     }
