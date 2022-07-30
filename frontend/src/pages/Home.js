@@ -25,8 +25,8 @@ const Home = () => {
     }, [dispatch])
 
     return(
-        <div className="home flex flex-row flex-wrap justify-center gap-10">
-            <div className="flex ">
+        <div className="home flex justify-center gap-10 ">
+            <div className="grid grid-rows-2 grid-flow-col gap-4">
                 {diary && diary.map((diary) => (
                     <DiaryDetails key={diary._id} diary={diary}/>
                 ))}
