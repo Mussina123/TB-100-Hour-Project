@@ -25,8 +25,8 @@ export const DiaryContextProvider = ({children}) => {
 
 
     return(
-        <DiaryContext.Provider value={{...state, dispatch}}>
-            {children}
+        <DiaryContext.Provider value={{...state, dispatch }}>
+            { children }
         </DiaryContext.Provider>
     )
 }

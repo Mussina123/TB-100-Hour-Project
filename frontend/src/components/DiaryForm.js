@@ -1,6 +1,9 @@
 import {useState} from "react"
+import { useDiaryContext } from "../hooks/useDiaryContext"
 
 const DiaryForm = () => {
+
+    const {dispatch} = useDiaryContext()
 
     const [item, setItem] = useState('')
     const [calories, setCalories] = useState('')
@@ -11,6 +14,7 @@ const DiaryForm = () => {
         e.preventDefault()
 
         const diary= {item, calories, serving}
+        
         const response = await fetch('http://localhost:5000/api/diary', {
             method: 'POST', 
             body: JSON.stringify(diary), 
@@ -29,7 +33,7 @@ const DiaryForm = () => {
             setCalories('')
             setServing('')
             console.log("New Workout Added", json)
-
+            dispatch({type: 'CREATE_DIARY', payload: json})
         }
     }
 
