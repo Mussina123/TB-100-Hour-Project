@@ -1,5 +1,6 @@
 import {useState} from "react"
 import { useDiaryContext } from "../hooks/useDiaryContext"
+import '../index.css'
 
 const DiaryForm = () => {
 
@@ -46,21 +47,21 @@ const DiaryForm = () => {
             type='text'
             onChange= {(e) => setItem(e.target.value)}
             value={item}
-            className="border-2 border-black"
+            className=""
         />
         <label className="mt-2">Calories:</label> 
         <input 
             type='text'
             onChange= {(e) => setCalories(e.target.value)}
             value={calories}
-            className="outline-red-900 ring-1 ring-blue-500"
+            className=""
         />
         <label className="mt-2">Serving:</label> 
         <input 
             type='text'
             onChange= {(e) => setServing(e.target.value)}
             value={serving}
-            className="outline-red-900 ring-1 ring-blue-500"
+            className=""
         />
         <button className="bg-blue-500 mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-32 m-auto mb-4">Add Food</button>
         {error && <div>{error}</div>}
