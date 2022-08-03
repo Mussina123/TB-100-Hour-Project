@@ -7,7 +7,7 @@ const DiaryDetails = ({diary}) => {
     const {dispatch} = useDiaryContext()
 
     const handleClick = async () => {
-        const response = await fetch('http://localhost:5000/api/diary/' + diary._id, {
+        const response = await fetch('https://tb-100-hour-project.herokuapp.com/api/diary/' + diary._id, {
             method: 'DELETE', 
         })
         const json = await response.json()
