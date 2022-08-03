@@ -46,7 +46,7 @@ const DiaryForm = () => {
             type='text'
             onChange= {(e) => setItem(e.target.value)}
             value={item}
-            className="outline-red-900 ring-1 ring-blue-500"
+            className="border-2 border-black"
         />
         <label className="mt-2">Calories:</label> 
         <input 
