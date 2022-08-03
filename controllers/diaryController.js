@@ -7,6 +7,7 @@ const mongoose = require('mongoose')
 const getDiarys = async(req, res) => {
     const diary = await (FoodDiary.find({}).sort({createdAt: -1}))
     res.status(200).json(diary)
+    console.log('Getting food diary')
 }
 
 // Get single Food Diary Log 

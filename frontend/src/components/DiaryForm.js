@@ -15,7 +15,7 @@ const DiaryForm = () => {
 
         const diary= {item, calories, serving}
         
-        const response = await fetch('http://localhost:5000/api/diary', {
+        const response = await fetch('https://tb-100-hour-project.herokuapp.com/api/diary', {
             method: 'POST', 
             body: JSON.stringify(diary), 
             headers: {
